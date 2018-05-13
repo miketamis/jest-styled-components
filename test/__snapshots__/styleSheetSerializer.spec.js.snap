@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`any component: mount 1`] = `
-.c0 {
+.Styled(Link)-1 {
   color: palevioletred;
   font-weight: bold;
 }
@@ -15,10 +15,10 @@ exports[`any component: mount 1`] = `
   <br />
   <Styled(Link)>
     <Link
-      className="c0"
+      className="Styled(Link)-1"
     >
       <a
-        className="c0"
+        className="Styled(Link)-1"
       >
         Styled, exciting Link
       </a>
@@ -28,7 +28,7 @@ exports[`any component: mount 1`] = `
 `;
 
 exports[`any component: react-test-renderer 1`] = `
-.c0 {
+.c {
   color: palevioletred;
   font-weight: bold;
 }
@@ -41,7 +41,7 @@ exports[`any component: react-test-renderer 1`] = `
   </a>
   <br />
   <a
-    className="c0"
+    className="c"
   >
     Styled, exciting Link
   </a>
@@ -61,44 +61,44 @@ exports[`any component: shallow 1`] = `
 `;
 
 exports[`attaching additional props: mount 1`] = `
-.c0 {
+.styled.div-2 {
   color: red;
 }
 
 <styled.div>
   <div
-    className="div c0"
+    className="div styled.div-2"
   />
 </styled.div>
 `;
 
 exports[`attaching additional props: react-test-renderer 1`] = `
-.c0 {
+.c {
   color: red;
 }
 
 <div
-  className="div c0"
+  className="div c"
 />
 `;
 
 exports[`attaching additional props: shallow 1`] = `
-.c0 {
+.c {
   color: red;
 }
 
 <div
-  className="div c0"
+  className="div c"
 />
 `;
 
 exports[`basic: mount 1`] = `
-.c0 {
+.styled.section-1 {
   padding: 4em;
   background: papayawhip;
 }
 
-.c1 {
+.styled.h1-1 {
   font-size: 1.5em;
   text-align: center;
   color: palevioletred;
@@ -106,11 +106,11 @@ exports[`basic: mount 1`] = `
 
 <styled.section>
   <section
-    className="c0"
+    className="styled.section-1"
   >
     <styled.h1>
       <h1
-        className="c1"
+        className="styled.h1-1"
       >
         Hello World, this is my first styled component!
       </h1>
@@ -120,22 +120,22 @@ exports[`basic: mount 1`] = `
 `;
 
 exports[`basic: react-test-renderer 1`] = `
-.c0 {
+.c {
   padding: 4em;
   background: papayawhip;
 }
 
-.c1 {
+.c-1 {
   font-size: 1.5em;
   text-align: center;
   color: palevioletred;
 }
 
 <section
-  className="c0"
+  className="c"
 >
   <h1
-    className="c1"
+    className="c-1"
   >
     Hello World, this is my first styled component!
   </h1>
@@ -143,13 +143,13 @@ exports[`basic: react-test-renderer 1`] = `
 `;
 
 exports[`basic: shallow 1`] = `
-.c0 {
+.c {
   padding: 4em;
   background: papayawhip;
 }
 
 <section
-  className="c0"
+  className="c"
 >
   <styled.h1>
     Hello World, this is my first styled component!
@@ -158,55 +158,55 @@ exports[`basic: shallow 1`] = `
 `;
 
 exports[`duplicated components: mount 1`] = `
-.c0 {
+.styled.div-1 {
   color: red;
 }
 
-.c1 {
+.styled.div-1-1 {
   color: green;
 }
 
 <div>
   <styled.div>
     <div
-      className="c0"
+      className="styled.div-1"
     />
   </styled.div>
    
   <styled.div>
     <div
-      className="c0"
+      className="styled.div-1"
     />
   </styled.div>
    
   <styled.div>
     <div
-      className="c1"
+      className="styled.div-1-1"
     />
   </styled.div>
 </div>
 `;
 
 exports[`duplicated components: react-test-renderer 1`] = `
-.c0 {
+.c {
   color: red;
 }
 
-.c1 {
+.c-1 {
   color: green;
 }
 
 <div>
   <div
-    className="c0"
+    className="c"
   />
    
   <div
-    className="c0"
+    className="c"
   />
    
   <div
-    className="c1"
+    className="c-1"
   />
 </div>
 `;
@@ -242,7 +242,7 @@ exports[`empty style: shallow 1`] = `
 `;
 
 exports[`extending styles: mount 1`] = `
-.c0 {
+.styled.button-1 {
   color: palevioletred;
   font-size: 1em;
   margin: 1em;
@@ -251,7 +251,7 @@ exports[`extending styles: mount 1`] = `
   border-radius: 3px;
 }
 
-.c1 {
+.styled.button-1-1 {
   color: palevioletred;
   font-size: 1em;
   margin: 1em;
@@ -265,14 +265,14 @@ exports[`extending styles: mount 1`] = `
 <div>
   <styled.button>
     <button
-      className="c0"
+      className="styled.button-1"
     >
       Normal Button
     </button>
   </styled.button>
   <styled.button>
     <button
-      className="c1"
+      className="styled.button-1-1"
     >
       Tomato Button
     </button>
@@ -281,7 +281,7 @@ exports[`extending styles: mount 1`] = `
 `;
 
 exports[`extending styles: react-test-renderer 1`] = `
-.c0 {
+.c {
   color: palevioletred;
   font-size: 1em;
   margin: 1em;
@@ -290,7 +290,7 @@ exports[`extending styles: react-test-renderer 1`] = `
   border-radius: 3px;
 }
 
-.c1 {
+.c-1 {
   color: palevioletred;
   font-size: 1em;
   margin: 1em;
@@ -303,12 +303,12 @@ exports[`extending styles: react-test-renderer 1`] = `
 
 <div>
   <button
-    className="c0"
+    className="c"
   >
     Normal Button
   </button>
   <button
-    className="c1"
+    className="c-1"
   >
     Tomato Button
   </button>
@@ -327,34 +327,34 @@ exports[`extending styles: shallow 1`] = `
 `;
 
 exports[`included class name: mount 1`] = `
-.c0 {
+.styled.div-2 {
   color: red;
 }
 
 <styled.div>
   <div
-    className="i c0"
+    className="i styled.div-2"
   />
 </styled.div>
 `;
 
 exports[`included class name: react-test-renderer 1`] = `
-.c0 {
+.c {
   color: red;
 }
 
 <div
-  className="i c0"
+  className="i c"
 />
 `;
 
 exports[`included class name: shallow 1`] = `
-.c0 {
+.c {
   color: red;
 }
 
 <div
-  className="i c0"
+  className="i c"
 />
 `;
 
@@ -378,6 +378,58 @@ exports[`leading white spaces: shallow 1`] = `
 />
 `;
 
+exports[`named  components: mount 1`] = `
+.ANamed-1 {
+  color: red;
+}
+
+.BNamed-1 {
+  color: green;
+}
+
+<div>
+  <ANamed>
+    <div
+      className="ANamed-1"
+    />
+  </ANamed>
+   
+  <BNamed>
+    <div
+      className="BNamed-1"
+    />
+  </BNamed>
+</div>
+`;
+
+exports[`named  components: react-test-renderer 1`] = `
+.c {
+  color: red;
+}
+
+.c-1 {
+  color: green;
+}
+
+<div>
+  <div
+    className="c"
+  />
+   
+  <div
+    className="c-1"
+  />
+</div>
+`;
+
+exports[`named  components: shallow 1`] = `
+<div>
+  <ANamed />
+   
+  <BNamed />
+</div>
+`;
+
 exports[`non-styled: mount 1`] = `<div />`;
 
 exports[`non-styled: react-test-renderer 1`] = `<div />`;
@@ -387,7 +439,7 @@ exports[`non-styled: shallow 1`] = `<div />`;
 exports[`null 1`] = `null`;
 
 exports[`referring to other components: mount 1`] = `
-.c1 {
+.styled.a-1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -401,18 +453,18 @@ exports[`referring to other components: mount 1`] = `
   color: palevioletred;
 }
 
-.c2 {
+.styled.svg-1 {
   -webkit-transition: fill 0.25s;
   transition: fill 0.25s;
   width: 48px;
   height: 48px;
 }
 
-.c0:hover .c2 {
+.styled.a-0:hover .styled.svg-1 {
   fill: rebeccapurple;
 }
 
-.c3 {
+.styled.span-1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -424,7 +476,7 @@ exports[`referring to other components: mount 1`] = `
   line-height: 1.2;
 }
 
-.c3::before {
+.styled.span-1::before {
   content: '◀';
   margin: 0 10px;
 }
@@ -433,17 +485,17 @@ exports[`referring to other components: mount 1`] = `
   href="#"
 >
   <a
-    className="c0 c1"
+    className="styled.a-0 styled.a-1"
     href="#"
   >
     <styled.svg>
       <svg
-        className="c2"
+        className="styled.svg-1"
       />
     </styled.svg>
     <styled.span>
       <span
-        className="c3"
+        className="styled.span-1"
       >
         Hovering my parent changes my style!
       </span>
@@ -453,7 +505,7 @@ exports[`referring to other components: mount 1`] = `
 `;
 
 exports[`referring to other components: react-test-renderer 1`] = `
-.c1 {
+.c-1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -467,18 +519,18 @@ exports[`referring to other components: react-test-renderer 1`] = `
   color: palevioletred;
 }
 
-.c2 {
+.c-2 {
   -webkit-transition: fill 0.25s;
   transition: fill 0.25s;
   width: 48px;
   height: 48px;
 }
 
-.c0:hover .c2 {
+.c:hover .c-2 {
   fill: rebeccapurple;
 }
 
-.c3 {
+.c-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -490,20 +542,20 @@ exports[`referring to other components: react-test-renderer 1`] = `
   line-height: 1.2;
 }
 
-.c3::before {
+.c-3::before {
   content: '◀';
   margin: 0 10px;
 }
 
 <a
-  className="c0 c1"
+  className="c c-1"
   href="#"
 >
   <svg
-    className="c2"
+    className="c-2"
   />
   <span
-    className="c3"
+    className="c-3"
   >
     Hovering my parent changes my style!
   </span>
@@ -511,49 +563,49 @@ exports[`referring to other components: react-test-renderer 1`] = `
 `;
 
 exports[`shallow with theme 1`] = `
-.c0 {
+.c {
   color: mediumseagreen;
 }
 
 <button
-  className="c0"
+  className="c"
 >
   Themed
 </button>
 `;
 
 exports[`supported css: mount 1`] = `
-.c0 {
+.styled.div-1 {
   padding: 2em 1em;
   background: papayawhip;
 }
 
-.c0:hover {
+.styled.div-1:hover {
   background: palevioletred;
 }
 
-.c0 > p {
+.styled.div-1 > p {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-html.test .c0 {
+html.test .styled.div-1 {
   display: none;
 }
 
 @media (max-width:600px) {
-  .c0 {
+  .styled.div-1 {
     background: tomato;
   }
 
-  .c0:hover {
+  .styled.div-1:hover {
     background: yellow;
   }
 }
 
 <styled.div>
   <div
-    className="c0"
+    className="styled.div-1"
   >
     <p>
       Hello World!
@@ -563,36 +615,36 @@ html.test .c0 {
 `;
 
 exports[`supported css: react-test-renderer 1`] = `
-.c0 {
+.c {
   padding: 2em 1em;
   background: papayawhip;
 }
 
-.c0:hover {
+.c:hover {
   background: palevioletred;
 }
 
-.c0 > p {
+.c > p {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-html.test .c0 {
+html.test .c {
   display: none;
 }
 
 @media (max-width:600px) {
-  .c0 {
+  .c {
     background: tomato;
   }
 
-  .c0:hover {
+  .c:hover {
     background: yellow;
   }
 }
 
 <div
-  className="c0"
+  className="c"
 >
   <p>
     Hello World!
@@ -601,36 +653,36 @@ html.test .c0 {
 `;
 
 exports[`supported css: shallow 1`] = `
-.c0 {
+.c {
   padding: 2em 1em;
   background: papayawhip;
 }
 
-.c0:hover {
+.c:hover {
   background: palevioletred;
 }
 
-.c0 > p {
+.c > p {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-html.test .c0 {
+html.test .c {
   display: none;
 }
 
 @media (max-width:600px) {
-  .c0 {
+  .c {
     background: tomato;
   }
 
-  .c0:hover {
+  .c:hover {
     background: yellow;
   }
 }
 
 <div
-  className="c0"
+  className="c"
 >
   <p>
     Hello World!
@@ -639,7 +691,7 @@ html.test .c0 {
 `;
 
 exports[`theming: mount 1`] = `
-.c0 {
+.styled.button-1 {
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
@@ -648,7 +700,7 @@ exports[`theming: mount 1`] = `
   border: 2px solid palevioletred;
 }
 
-.c1 {
+.styled.button-1-1 {
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
@@ -666,7 +718,7 @@ exports[`theming: mount 1`] = `
     }
   >
     <button
-      className="c0"
+      className="styled.button-1"
     >
       Normal
     </button>
@@ -686,7 +738,7 @@ exports[`theming: mount 1`] = `
       }
     >
       <button
-        className="c1"
+        className="styled.button-1-1"
       >
         Themed
       </button>
@@ -696,7 +748,7 @@ exports[`theming: mount 1`] = `
 `;
 
 exports[`theming: react-test-renderer 1`] = `
-.c0 {
+.c {
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
@@ -705,7 +757,7 @@ exports[`theming: react-test-renderer 1`] = `
   border: 2px solid palevioletred;
 }
 
-.c1 {
+.c-1 {
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
@@ -716,12 +768,12 @@ exports[`theming: react-test-renderer 1`] = `
 
 <div>
   <button
-    className="c0"
+    className="c"
   >
     Normal
   </button>
   <button
-    className="c1"
+    className="c-1"
   >
     Themed
   </button>
@@ -760,33 +812,33 @@ exports[`theming: shallow 1`] = `
 `;
 
 exports[`trailing white spaces: mount 1`] = `
-.c0 {
+.styled.div-2 {
   color: red;
 }
 
 <styled.div>
   <div
-    className="div   c0"
+    className="div   styled.div-2"
   />
 </styled.div>
 `;
 
 exports[`trailing white spaces: react-test-renderer 1`] = `
-.c0 {
+.c {
   color: red;
 }
 
 <div
-  className="div   c0"
+  className="div   c"
 />
 `;
 
 exports[`trailing white spaces: shallow 1`] = `
-.c0 {
+.c {
   color: red;
 }
 
 <div
-  className="div   c0"
+  className="div   c"
 />
 `;

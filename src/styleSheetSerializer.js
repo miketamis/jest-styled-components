@@ -3,13 +3,16 @@ const { getCSS, getHashes } = require('./utils')
 
 const KEY = '__jest-styled-components__'
 
-const getNodes = (node, nodes = []) => {
+const getNodes = (node, nodes = [], parentName) => {
+  const styledName = (node.node && node.node.type.displayName) || parentName
+
   if (typeof node === 'object') {
     nodes.push(node)
+    node.styledName = styledName
   }
 
   if (node.children) {
-    node.children.forEach(child => getNodes(child, nodes))
+    node.children.forEach(child => getNodes(child, nodes, styledName))
   }
 
   return nodes
@@ -17,8 +20,9 @@ const getNodes = (node, nodes = []) => {
 
 const markNodes = nodes => nodes.forEach(node => (node[KEY] = true))
 
-const getClassNames = nodes =>
-  nodes.reduce((classNames, node) => {
+const getClassNames = nodes => {
+  const classNameMap = {}
+  const classNamesResult = nodes.reduce((classNames, node) => {
     const classNameProp =
       node.props && (node.props.class || node.props.className)
 
@@ -26,11 +30,24 @@ const getClassNames = nodes =>
       classNameProp
         .trim()
         .split(/\s+/)
-        .forEach(className => classNames.add(className))
+        .forEach((className, index) => {
+          classNames.add(className)
+          if (node.styledName) {
+            classNameMap[className] = {
+              styled_name: node.styledName,
+              index,
+            }
+          }
+        })
     }
 
     return classNames
   }, new Set())
+  return {
+    classNames: classNamesResult,
+    classNameMap,
+  }
+}
 
 const filterClassNames = (classNames, hashes) =>
   classNames.filter(className => hashes.includes(className))
@@ -69,14 +86,36 @@ const getStyle = classNames => {
   return css.stringify(ast)
 }
 
-const replaceClassNames = (result, classNames, style) =>
-  classNames
+const getNameClassname = (className, classNameMap, classCounter) => {
+  let name = 'c'
+  if (classNameMap[className]) {
+    name = `${classNameMap[className].styled_name}-${
+      classNameMap[className].index
+    }`
+  }
+  if (!classCounter[name] && classCounter[name] !== 0) {
+    classCounter[name] = 0
+  } else {
+    classCounter[name]++
+    name += `-${classCounter[name]}`
+  }
+
+  return name
+}
+
+const replaceClassNames = (result, classNames, style, classNameMap) => {
+  const classCounter = {}
+  return classNames
     .filter(className => style.includes(className))
     .reduce(
-      (acc, className, index) =>
-        acc.replace(new RegExp(className, 'g'), `c${index++}`),
+      (acc, className) =>
+        acc.replace(
+          new RegExp(className, 'g'),
+          getNameClassname(className, classNameMap, classCounter)
+        ),
       result
     )
+}
 
 const replaceHashes = (result, hashes) =>
   hashes.reduce(
@@ -98,14 +137,18 @@ const styleSheetSerializer = {
     markNodes(nodes)
 
     const hashes = getHashes()
-    let classNames = [...getClassNames(nodes)]
+    const resultClassName = getClassNames(nodes)
+    let { classNames } = resultClassName
+    const { classNameMap } = resultClassName
+
+    classNames = [...classNames]
     classNames = filterClassNames(classNames, hashes)
 
     const style = getStyle(classNames)
     const code = print(val)
 
     let result = `${style}${style ? '\n\n' : ''}${code}`
-    result = replaceClassNames(result, classNames, style)
+    result = replaceClassNames(result, classNames, style, classNameMap)
     result = replaceHashes(result, hashes)
 
     return result

@@ -42,9 +42,27 @@ test('duplicated components', () => {
   `
 
   toMatchSnapshot(
-    'duplicated components',
+    'duplicatend components',
     <div>
       <A /> <A /> <B />
+    </div>
+  )
+})
+
+test('named  components', () => {
+  const ANamed = styled.div`
+    color: red;
+  `
+  const BNamed = styled.div`
+    color: green;
+  `
+  ANamed.displayName = 'ANamed'
+  BNamed.displayName = 'BNamed'
+
+  toMatchSnapshot(
+    'named components',
+    <div>
+      <ANamed /> <BNamed />
     </div>
   )
 })

@@ -1,23 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`basic 1`] = `
-.c0 {
+.c {
   padding: 4em;
   background: papayawhip;
 }
 
-.c1 {
+.c-1 {
   font-size: 1.5em;
   text-align: center;
   color: palevioletred;
 }
 
 <section
-  class="c0"
+  class="c"
   ref={undefined}
 >
   <h1
-    class="c1"
+    class="c-1"
     ref={undefined}
   >
     Hello World, this is my first styled component!
